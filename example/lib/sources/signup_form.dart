@@ -54,9 +54,8 @@ class _SignupFormState extends State<SignupForm> {
                   decoration: InputDecoration(
                     labelText: 'Confirm Password',
                     suffixIcon: (_formKey.currentState != null &&
-                            !(_formKey.currentState?.fields['confirm_password']
-                                    ?.isValid ??
-                                false))
+                            !_formKey.currentState.fields['confirm_password']
+                                .isValid)
                         ? const Icon(Icons.error, color: Colors.red)
                         : const Icon(Icons.check, color: Colors.green),
                   ),
@@ -69,7 +68,7 @@ class _SignupFormState extends State<SignupForm> {
                             : null),*/
                     (val) {
                       if (val !=
-                          _formKey.currentState?.fields['password']?.value) {
+                          _formKey.currentState.fields['password'].value) {
                         return 'Passwords do not match';
                       }
                       return null;
@@ -85,7 +84,7 @@ class _SignupFormState extends State<SignupForm> {
                   ]),
                   // initialValue: true,
                   decoration: InputDecoration(labelText: 'Accept Terms?'),
-                  builder: (FormFieldState<bool?> field) {
+                  builder: (FormFieldState<bool> field) {
                     return InputDecorator(
                       decoration: InputDecoration(
                         errorText: field.errorText,
@@ -103,16 +102,19 @@ class _SignupFormState extends State<SignupForm> {
                 ),
                 const SizedBox(height: 10),
                 MaterialButton(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Theme.of(context).accentColor,
+                  child: Text(
+                    'Signup',
+                    style: TextStyle(color: Colors.white),
+                  ),
                   onPressed: () {
-                    if (_formKey.currentState?.saveAndValidate() ?? false) {
+                    if (_formKey.currentState.saveAndValidate()) {
                       print('Valid');
                     } else {
                       print('Invalid');
                     }
-                    print(_formKey.currentState?.value);
+                    print(_formKey.currentState.value);
                   },
-                  child: Text('Signup', style: TextStyle(color: Colors.white)),
                 )
               ],
             ),

@@ -135,7 +135,7 @@ class FormBuilderDateRangePicker extends FormBuilderField<List<DateTime>> {
               enabled: state.enabled,
               style: style,
               focusNode: state.effectiveFocusNode,
-              decoration: state.decoration(),
+              decoration: state.decoration,
               // initialValue: "${_initialValue ?? ''}",
               maxLines: maxLines,
               keyboardType: keyboardType,
@@ -172,12 +172,10 @@ class FormBuilderDateRangePicker extends FormBuilderField<List<DateTime>> {
       FormBuilderDateRangePickerState();
 
   static String tryFormat(DateTime date, intl.DateFormat format) {
-    if (date != null) {
-      try {
-        return format.format(date);
-      } catch (e) {
-        // print('Error formatting date: $e');
-      }
+    try {
+      return format.format(date);
+    } catch (e) {
+      // Ignore exception
     }
     return '';
   }

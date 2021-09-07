@@ -1,3 +1,33 @@
+## [6.1.0] - 01-Sep-2021
+* When form validation fails, automatically scroll to first error
+* New way to programmatically induce custom errors by calling `GlobalKey<FormBuilderState>.invalidateField()` or `GlobalKey<FormBuilderFieldState>.invalidate()`
+* Added Arabic and Persian/Farsi locales
+* Made maxLines property nullable and added assertions
+* Remove field from internal value map on when a field is unregistered
+* Fix checkbox issue with null values
+
+## [6.0.1] - 19-May-2021
+* Add whitespace check for required validator
+* Null-safety and type fixes
+* Dispose off registered listeners (#799)
+
+## [6.0.0] - 20-Apr-2021
+* Re-introduced DateTimePicker field without external dependencies
+* Minor fixes
+
+## [6.0.0-nullsafety.1] - 24-Mar-2021
+* Static analysis improvements
+* Documentation improvements
+
+## [6.0.0-nullsafety.0] - 24-Mar-2021
+* Started working on null-safety
+
+**BREAKING CHANGES**:
+* Removed fields that depend on external dependencies incuding: `FormBuilderChipsInput`, `FormBuilderColorPicker`, `FormBuilderRating`, `FormBuilderSearchableDropdown`, `FormBuilderSignaturePad`, `FormBuilderTouchSpin`, `FormBuilderTypeAhead`
+
+## [5.0.0] - 24-Mar-2020
+* Flutter 2.* support
+
 ## [4.2.0] - 29-Dec-2020
 * Added support for Slovak (sk) - @AdamA
 

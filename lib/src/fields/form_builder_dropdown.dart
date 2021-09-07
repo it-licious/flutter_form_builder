@@ -238,7 +238,7 @@ class FormBuilderDropdown<T> extends FormBuilderField<T> {
             }
 
             return InputDecorator(
-              decoration: state.decoration().copyWith(
+              decoration: state.decoration.copyWith(
                     floatingLabelBehavior: hint == null
                         ? decoration.floatingLabelBehavior
                         : FloatingLabelBehavior.always,

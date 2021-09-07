@@ -19,6 +19,7 @@ dependency_overrides:
   modal_bottom_sheet: ^0.2.1+1-dev
 
 dev_dependencies:
+  pedantic: ^1.11.1
   flutter_test:
     sdk: flutter
   intl_translation:
